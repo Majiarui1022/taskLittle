@@ -1,0 +1,18 @@
+{
+  "pages": [
+    "pages/wechart/wechart",
+    "pages/today/today",
+    "pages/index/index",
+    "pages/newtask/newtask"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "",
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "backgroundColor": "#FFFFFF",
+    "enablePullDownRefresh": false
+  },
+  "usingComponents": {},
+  "sitemapLocation": "sitemap.json"
+}

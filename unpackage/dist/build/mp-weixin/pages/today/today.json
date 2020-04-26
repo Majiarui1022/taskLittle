@@ -1,0 +1,9 @@
+{
+  "navigationStyle": "custom",
+  "navigationBarTextStyle": "white",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "uni-popup": "/components/uni-popup/uni-popup",
+    "loadings": "/pages/loading/loading"
+  }
+}

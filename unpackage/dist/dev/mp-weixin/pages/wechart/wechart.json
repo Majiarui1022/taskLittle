@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "",
+  "usingComponents": {
+    "loadings": "/pages/loading/loading"
+  }
+}

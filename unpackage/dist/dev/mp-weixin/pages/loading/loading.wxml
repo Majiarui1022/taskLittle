@@ -1,0 +1,1 @@
+<view class="{{['loader-layer _div',show?'active':'']}}"><view class="spinner _div"><view class="double-bounce1 _div"></view><view class="double-bounce2 _div">loading...</view><view class="double-bounce3 _div"></view></view></view>

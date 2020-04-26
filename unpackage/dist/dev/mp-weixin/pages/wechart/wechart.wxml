@@ -1,0 +1,1 @@
+<view class="wechart"><loadings vue-id="2fd4fd5e-1" show="{{LoadingS}}" bind:__l="__l"></loadings><image src="../../static/img/kflogo.png" mode></image><button class="wxlogin" type="primary" loading="{{LoadingS}}" data-event-opts="{{[['tap',[['loginIn',['$event']]]]]}}" bindtap="__e">微信快速登录</button><view class="bot-name">本小程序仅供控福内部员工汇报任务使用</view></view>
