@@ -1,8 +1,8 @@
 var host = 'https://www.kongfushidai.cn/';
 
-//  	http://47.103.80.249:8000
-/**     http://10.102.100.23:8001
-//		http://10.102.100.120:8000
+//  	https://www.kongfushidai.cn/
+/**     
+//		http://192.168.0.27:8003/
  * POST请求，
  * URL：接口
  * postData：参数，json类型
@@ -20,6 +20,7 @@ function request(url, postData, doSuccess, doFail , loginstatus) {
        },
     data: postData,
     method: 'POST',
+	// timeout : 2000,						//暂不处理
     success: function (res) {
       //参数值为res.data,直接将返回的数据传入	
 	  if(res.statusCode === 401){
@@ -28,7 +29,7 @@ function request(url, postData, doSuccess, doFail , loginstatus) {
 	  console.log(res)
       doSuccess(res);
     },
-    fail: function () {
+    fail: function (e) {
       doFail();
     },
   })

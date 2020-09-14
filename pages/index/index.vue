@@ -15,6 +15,7 @@
 <script>
 	import requireurl from '../../requist/requist.js'
 	import Loadings from '../loading/loading.vue'
+	
 	export default {
 		components:{
 			Loadings

@@ -24,10 +24,11 @@
 			<scroll-view style="height: 100%;" scroll-y="true" class="scroll-Y" @scrolltoupper="upper" @scrolltolower="lower">
 				<view class="task-list">
 					<view class="row" v-for="(item,index) in TabList" :key="index">
-						<view class="top-menu" :class="asdasdasd(item) === 5 ? 'Green' :
-															 asdasdasd(item) === 2 ? 'Red' :  
-															 asdasdasd(item) === 3 ? 'Blue' :
-															 asdasdasd(item) === 4 ? 'Yellow' : 'Blue'"
+						<view class="top-menu" 
+						:class="asdasdasd(item) === 5 ? 'Green' :
+								asdasdasd(item) === 2 ? 'Red' :  
+								asdasdasd(item) === 3 ? 'Blue' :
+								asdasdasd(item) === 4 ? 'Yellow' : 'Blue'"
 						 @click="open(item)">
 							<view class="tast-menu">
 								<view class="task-top-const">
@@ -71,8 +72,14 @@
 
 
 							<view class="task-status">
-								<image :src="asdasdasd(item) === 1 ? Norun :
-											 asdasdasd(item) === 5 ? OKRun : BlueRun" mode=""></image>
+								<image :src="bbbbbbbaa(item) === 1 ? Norun :
+											 bbbbbbbaa(item) === 5 ? OKRun : 
+											 bbbbbbbaa(item) === 7 ? BlueRun : 
+											 item.status === 1 ? Norun : 
+											item.status === 2 ? BlueRun : 
+											 item.status === 3 ? OKRun : '' " mode=""
+										
+											 ></image>
 							</view>
 						</view>
 						<image :src="asdasdasd(item) === 5 ? GreenImages :
@@ -159,6 +166,7 @@
 		onShow() {
 			this.getTimer()
 			this.GetDay()
+			
 			console.log('显示')
 		},
 		methods: {
@@ -169,7 +177,9 @@
 				console.log('to the top')
 			},
 			open(val) {
-				this.enterInfo = val.enter.info ? val.enter.info : val.info ? val.info : '暂无内容';
+				console.log(val)
+				this.enterInfo = val.info ? val.info : val.enter ? val.enter.info : '暂无内容';
+				// this.enterInfo = val.enter.info ? val.enter.info : val.info ? val.info : '暂无内容';
 				this.$refs.popup.open()
 			},
 			tasklist(res) {
@@ -314,6 +324,28 @@
 			clearLoading() {
 				this.LoadingS = false
 			},
+			// YesToy(item){
+			// 	if(item.status == 1){
+			// 		return 1;
+			// 	}else if(item.status == 2){
+			// 		return 2
+			// 	}else if(item.status == 3){
+					
+			// 	}
+			// },
+			bbbbbbbaa(item){
+				if (!item.enter) {
+					return;
+				}
+				if(item.enter.status  == 1){
+					return 1;
+				}else if (item.enter.status == 3) {
+					return 5;
+				}else if(item.enter.status == 2){
+					return 7;
+				}
+			},
+			
 			asdasdasd(item) {
 				if (!item.enter) {
 					return;
@@ -326,8 +358,8 @@
 					return 5;
 				}
 
-				var timers = parseInt(new Date(item.plan_end_time_).getTime() / (1000 * 60 * 60 * 24) - new Date().getTime() / (
-					1000 * 60 * 60 * 24))
+				var timers = new Date(item.plan_end_time_).getTime() / (1000 * 60 * 60 * 24) - new Date().getTime() / (
+					1000 * 60 * 60 * 24)
 				if (timers < 0) {
 					//逾期
 					return 2;
@@ -687,6 +719,7 @@
 						font-size: 28upx;
 						color: rgba(51, 51, 51, 1);
 						line-height: 40upx;
+						
 					}
 				}
 			}

@@ -40,8 +40,25 @@ page {
   border-bottom: 1px solid #F3F3F5;
   padding: 30rpx 0;
 }
-.row:last-child {
-    border: 0;
+.address-icn {
+  width: 46rpx !important;
+  height: 46rpx !important;
+}
+.address-cha .label-name {
+  padding-right: 50rpx;
+  box-sizing: border-box;
+}
+.address-cha .label-name ._span {
+    font-size: 22rpx;
+    font-family: SimHei;
+    font-weight: 400;
+    color: black;
+    margin-bottom: 10rpx;
+}
+.address-cha .label-name .add-res-info {
+    font-size: 28rpx;
+    font-family: SimHei;
+    color: black;
 }
 .row-zhi {
   -webkit-flex-wrap: wrap;
@@ -84,7 +101,7 @@ page {
     display: block;
 }
 .init-word {
-  width: 220rpx;
+  width: 360rpx;
   height: 30rpx;
   font-size: 30rpx;
   color: black;
